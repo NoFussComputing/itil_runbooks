@@ -2,7 +2,7 @@
 title: New Service Catalog form
 description: Playbook to detail the flow for adding a new Service Catalog form
 date: 2024-02-05
-template: itil_runbook.html
+template: project.html
 software:
   name: glpi
 itil_tags:
