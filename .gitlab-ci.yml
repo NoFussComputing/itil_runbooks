@@ -16,6 +16,50 @@ variables:
   GIT_SUBMODULE_DEPTH: 1
 
 
+pages:
+  stage: deploy
+  resource_group: Documentation
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - mv "$CI_PROJECT_DIR/artifacts/build/Documentation.Build/build" public
+  needs: [ 'Documentation.Build' ]
+  environment: 
+    name: Gitlab Pages
+    url: $CI_PAGES_URL/$PAGES_ENVIRONMENT_PATH
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: '$JOB_STOP_GITLAB_PAGES'
+      when: never
+
+    - if:  # condition_dev_branch_push
+        $CI_COMMIT_BRANCH == "development" && 
+        $CI_PIPELINE_SOURCE == "push"
+      exists:
+        - '{docs/**,pages/**}/*.md'
+      changes:
+        paths:
+          - '{docs/**,pages/**}/*.md'
+        compare_to: 'master'
+      when: always
+
+    - if:  # condition_not_master_or_dev_push
+        $CI_COMMIT_BRANCH != "master" && 
+        $CI_COMMIT_BRANCH != "development" && 
+        $CI_PIPELINE_SOURCE == "push"
+      exists:
+        - '{docs/**,pages/**}/*.md'
+      changes:
+        paths:
+          - '{docs/**,pages/**}/*.md'
+        compare_to: 'development'
+      allow_failure: true
+      when: always
+
+    - when: never
+
 
 Website Publish:
   extends: .submodule_update_trigger
