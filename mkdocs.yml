@@ -23,6 +23,12 @@ nav:
 
       - projects/itil/runbooks/index.md
 
+      - GLPI:
+
+        - Plugins:
+
+          - projects/itil/runbooks/glpi/plugins/form_creator_new_form.md
+
 - Operations: 
 
   - operations/index.md
