@@ -162,7 +162,7 @@ To add the questions and answers to the document The following template contains
 
 ```
 
-The mapping of JSON types to GLPI question types is as follows: 
+The mapping of JSON types to GLPI question types is as follows:
 
 - `choice` - GLPI type `Radios` when used, `values: "<value 1>,<value 2>,<etc>"` must be set. must be lower case
 

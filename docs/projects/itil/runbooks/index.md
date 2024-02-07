@@ -11,4 +11,4 @@ about: https://gitlab.com/nofusscomputing/infrastructure/configuration-managemen
 
 This project contains run books for tasks for softwares that we use or have used. It's designed to be simple and one task per runbook so they are easy to follow. Even though these runbooks are done from the perspective of our use of the software, this project is for anyone to view, use and contribute. As such Merge Requests are welcome.
 
-Runbooks have been broken down to be under the software they belong. To navigate the runbooks use the menu to the left. 
+Runbooks have been broken down to be under the software they belong. To navigate the runbooks use the menu to the left.
