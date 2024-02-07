@@ -1,0 +1,39 @@
+---
+
+include:
+  - project: nofusscomputing/projects/gitlab-ci
+    ref: development
+    file:
+      - template/automagic.gitlab-ci.yaml
+
+
+variables:
+  GIT_SUBMODULE_STRATEGY: normal
+  GIT_SYNC_URL: "https://$GITHUB_USERNAME_ROBOT:$GITHUB_TOKEN_ROBOT@github.com/NoFussComputing/itil_runbooks.git"
+  MY_PROJECT_ID: "54680811"
+  PAGES_ENVIRONMENT_PATH: projects/itil/runbooks/
+  ANSIBLE_FORCE_COLOR: 'true'
+  GIT_SUBMODULE_DEPTH: 1
+
+
+
+Website Publish:
+  extends: .submodule_update_trigger
+  variables:
+    SUBMODULE_UPDATE_TRIGGER_PROJECT: nofusscomputing/infrastructure/website
+    GIT_COMMIT_TYPE: feat
+  environment:
+    url: https://nofusscomputing.com/$PAGES_ENVIRONMENT_PATH
+    name: Documentation
+  rules:
+    - if:  # condition_dev_branch_push
+        $CI_COMMIT_BRANCH == "development" && 
+        $CI_PIPELINE_SOURCE == "push"
+      exists:
+        - '{docs/**,pages/**}/*.md'
+      changes:
+        paths:
+          - '{docs/**,pages/**}/*.md'
+        compare_to: 'master'
+      when: always
+    - when: never
