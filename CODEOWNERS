@@ -1,0 +1,7 @@
+[Repository Owners] @developers
+*
+
+[Approval Required] @jasonpage.tas @jon_nfc
+.vscode/*
+CODEOWNERS
+LICENSE
