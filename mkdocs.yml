@@ -33,6 +33,10 @@ nav:
 
           - projects/itil/runbooks/kubernetes/failed_to_connect_to_api.md
 
+      - PHPIPAM:
+
+          - projects/itil/runbooks/phpipam/device_add.md
+
 - Operations: 
 
   - operations/index.md

@@ -6,7 +6,9 @@
         "automations",
         "formcreator",
         "GLPI",
+        "IPAM",
         "ITIL",
+        "PHPIPAM",
         "runbook",
         "runbooks"
     ],
