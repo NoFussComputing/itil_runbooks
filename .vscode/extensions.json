@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "gitlab.gitlab-workflow",
+        "jebbs.markdown-extended",
+        "redhat.vscode-yaml"
+    ]
+}
