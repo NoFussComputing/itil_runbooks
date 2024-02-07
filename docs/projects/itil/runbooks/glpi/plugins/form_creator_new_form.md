@@ -220,7 +220,7 @@ For tasks that require automations to be ran against multiple systems, this is p
 }
 ```
 
-`<system name>` can be any value that you wish as it is designed to be used by your automations. The only reserved keys in this dictionary are `itil_category` and `task_category` which are used for the ticket creation process.
+`<system name>` can be any value that you wish as it is designed to be used by your automations. The only reserved keys in this dictionary are `itil_category`, `solution_text` and `task_category` which are used for the ticket creation process.
 
 !!! info
     We use `glpi`, `ipam` and `notification` as the system names. `notification` is a "special" that is used to create a ticket for the purposes of notifying a user.
