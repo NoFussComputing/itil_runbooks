@@ -19,8 +19,6 @@ nav:
 
   - ITIL:
 
-    - projects/ansible/index.md
-
     - Runbooks: 
 
       - projects/itil/runbooks/index.md
