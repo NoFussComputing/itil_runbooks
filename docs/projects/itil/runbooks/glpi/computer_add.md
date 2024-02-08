@@ -9,30 +9,19 @@ area: Automation
 
 ## New host workflow
 
-1. Add host to GLPI _Service catalog item: new computer_
+1. Login to GLPI
 
-1. configure the host within the inventory
+1. Navigate to Assets -> Computers
 
-    - `hostconfig` variable
+1. Click the blue `+ Add` at the top of the screen
 
-        !!! tip
-            If host is to be exposed/used on the public internet set variable `host_external_ip` to the publicly accessible IP address.
+1. As a minimum fill in the following fields
 
-    - edit `hosts.yaml` adding the host to **all** of the groups it is part of
+    - `Name` - The computers name
 
-1. run playbook `all.yaml` against the host
+    - `Technician in Charge of the Hardware` or `Group in Charge of the Hardware` - This is the person or group who will be responsible for the item
 
-1. As soon as the playbook has completed login as the admin user
+        !!! danger "Requirement"
+            **ALL** Items within the ITIL must have a responsible person.
 
-    1. change the password and save to the password manager.
-
-        !!! tip
-            use the password manager to generate a random and long password.
-
-        !!! danger
-            Failing to reset the admin users password removes console access to the machine. Without console access, fixing a missed-steak is no longer an option.
-
-        !!! note
-            You will be required to have your ssh-public cert signed by the host CA to access the machine.
-
-1. Confirm that the host is displayed within grafana _node exporter_
+    - `Serial Number` or `UUID` - This information allows the inventory agent to link your computer to an incoming inventory
