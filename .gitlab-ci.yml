@@ -1,0 +1,83 @@
+---
+
+include:
+  - project: nofusscomputing/projects/gitlab-ci
+    ref: development
+    file:
+      - template/automagic.gitlab-ci.yaml
+
+
+variables:
+  GIT_SUBMODULE_STRATEGY: normal
+  GIT_SYNC_URL: "https://$GITHUB_USERNAME_ROBOT:$GITHUB_TOKEN_ROBOT@github.com/NoFussComputing/itil_runbooks.git"
+  MY_PROJECT_ID: "54680811"
+  PAGES_ENVIRONMENT_PATH: projects/itil/runbooks/
+  ANSIBLE_FORCE_COLOR: 'true'
+  GIT_SUBMODULE_DEPTH: 1
+
+
+pages:
+  stage: deploy
+  resource_group: Documentation
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - mv "$CI_PROJECT_DIR/artifacts/build/Documentation.Build/build" public
+  needs: [ 'Documentation.Build' ]
+  environment: 
+    name: Gitlab Pages
+    url: $CI_PAGES_URL/$PAGES_ENVIRONMENT_PATH
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: '$JOB_STOP_GITLAB_PAGES'
+      when: never
+
+    - if:  # condition_dev_branch_push
+        $CI_COMMIT_BRANCH == "development" && 
+        $CI_PIPELINE_SOURCE == "push"
+      exists:
+        - '{docs/**,pages/**}/*.md'
+      changes:
+        paths:
+          - '{docs/**,pages/**}/*.md'
+        compare_to: 'master'
+      when: always
+
+    - if:  # condition_not_master_or_dev_push
+        $CI_COMMIT_BRANCH != "master" && 
+        $CI_COMMIT_BRANCH != "development" && 
+        $CI_PIPELINE_SOURCE == "push"
+      exists:
+        - '{docs/**,pages/**}/*.md'
+      changes:
+        paths:
+          - '{docs/**,pages/**}/*.md'
+        compare_to: 'development'
+      allow_failure: true
+      when: always
+
+    - when: never
+
+
+Website Publish:
+  extends: .submodule_update_trigger
+  variables:
+    SUBMODULE_UPDATE_TRIGGER_PROJECT: nofusscomputing/infrastructure/website
+    GIT_COMMIT_TYPE: feat
+  environment:
+    url: https://nofusscomputing.com/$PAGES_ENVIRONMENT_PATH
+    name: Documentation
+  rules:
+    - if:  # condition_dev_branch_push
+        $CI_COMMIT_BRANCH == "development" && 
+        $CI_PIPELINE_SOURCE == "push"
+      exists:
+        - '{docs/**,pages/**}/*.md'
+      changes:
+        paths:
+          - '{docs/**,pages/**}/*.md'
+        compare_to: 'master'
+      when: always
+    - when: never

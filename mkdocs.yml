@@ -1,0 +1,54 @@
+INHERIT: website-template/mkdocs.yml
+
+docs_dir: 'docs'
+
+repo_name: ITIL Runbooks
+repo_url: https://gitlab.com/nofusscomputing/infrastructure/configuration-management/itil_runbooks
+edit_uri: '/-/ide/project/nofusscomputing/infrastructure/configuration-management/itil_runbooks/edit/development/-/docs/'
+
+nav:
+- Home: index.md
+
+- Articles: 
+
+  - articles/index.md
+
+- Projects: 
+
+  - projects/index.md
+
+  - ITIL:
+
+    - Runbooks: 
+
+      - projects/itil/runbooks/index.md
+
+      - GIT:
+
+        - projects/itil/runbooks/git/project_config.md
+
+      - GLPI:
+
+        - projects/itil/runbooks/glpi/computer_add.md
+
+        - Plugins:
+
+          - projects/itil/runbooks/glpi/plugins/form_creator_new_form.md
+
+      - Kubernetes:
+
+          - projects/itil/runbooks/kubernetes/failed_to_connect_to_api.md
+
+      - PHPIPAM:
+
+          - projects/itil/runbooks/phpipam/device_add.md
+
+      - Service Catalog:
+
+          - projects/itil/runbooks/service_catalog/new_user.md
+
+- Operations: 
+
+  - operations/index.md
+
+- Contact Us: contact.md
