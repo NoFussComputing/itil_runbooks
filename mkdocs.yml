@@ -23,6 +23,10 @@ nav:
 
       - projects/itil/runbooks/index.md
 
+      - GIT:
+
+        - projects/itil/runbooks/git/project_config.md
+
       - GLPI:
 
         - Plugins:
