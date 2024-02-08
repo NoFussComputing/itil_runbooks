@@ -43,6 +43,10 @@ nav:
 
           - projects/itil/runbooks/phpipam/device_add.md
 
+      - Service Catalog:
+
+          - projects/itil/runbooks/service_catalog/new_user.md
+
 - Operations: 
 
   - operations/index.md
