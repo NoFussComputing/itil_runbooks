@@ -2,7 +2,7 @@
 title: New Device
 description: Runbook to detail what to do to add a new device
 date: 2024-01-18
-template: project.html
+template: itil_runbook.html
 ---
 
 This workflow forms the first step for a new device that will be managed as part of the ITIL. The addition of this device to the IPAM system is the beginning of the management lifecycle of the device. The information contained within this system will become the single source of truth for this device where information may conflict between different systems.

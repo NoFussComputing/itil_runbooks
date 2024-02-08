@@ -2,7 +2,7 @@
 title: New Service Catalog form
 description: Playbook to detail the flow for adding a new Service Catalog form
 date: 2024-02-05
-template: project.html
+template: itil_runbook.html
 software:
   name: glpi
 itil_tags:
@@ -305,3 +305,56 @@ Below is an example of everything as explained above to demonstrate a JSON docum
 
 
 ```
+
+
+
+
+
+
+
+## Automation required fields
+
+- Ticket Category
+
+- Ticket Type
+
+- Task Catgeory
+
+- `
+
+- approval required `true/false`
+
+    - approver ID `int`
+
+    - `entity_approval` is set to the id of the profile that will approval the request
+
+- any blank field is considered as not presented to the user
+
+
+
+
+## To Do
+
+
+- Automation form delete to only delete a form if it is related to a ticket.
+
+### Automation
+
+The reason for this change is that there is a [GLPI plugin that on ticket creation a webhook](https://github.com/FutureProcessing/glpi-webhook) can be launched. This will be useful for when EDA is operational as it will be able to immediatly process a form on creation.
+
+- update the form creator automations to use formcreator created tickets.
+
+    - ITIL category will come from the ticket
+
+    - Approver will come from form data that the automation reads and requests for the form to be approved.
+
+    - only when form approved will the automation be parsed
+
+    - searching for tickets that require automating to be `RequestSources: formcreator` and `solved: false` and `approved: true` if `validation: true`
+
+
+## Documentation
+
+A propper automation flow must exist for the automation jobs so that down the track the automation flow and reasons is known.
+
+

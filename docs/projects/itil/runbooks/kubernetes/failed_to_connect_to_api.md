@@ -2,7 +2,7 @@
 title: API Timeout
 description: This runbook details fault finding a Kubernetes api timeout.
 date: 2024-02-01
-template: project.html
+template: itil_runbook.html
 ---
 
 This runbook details the steps to fault find timeout errors when connecting to the api server. i.e. the following errors:
