@@ -29,6 +29,8 @@ nav:
 
       - GLPI:
 
+        - projects/itil/runbooks/glpi/appliance_add.md
+
         - projects/itil/runbooks/glpi/computer_add.md
 
         - Plugins:
