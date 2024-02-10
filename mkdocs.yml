@@ -33,6 +33,8 @@ nav:
 
         - projects/itil/runbooks/glpi/computer_add.md
 
+        - projects/itil/runbooks/glpi/software_add.md
+
         - Plugins:
 
           - projects/itil/runbooks/glpi/plugins/form_creator_new_form.md
