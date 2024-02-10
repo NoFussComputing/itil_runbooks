@@ -19,7 +19,7 @@ GLPI provides as part of it's library, software so it can be tracked and audited
 
 1. As a minimum fill in the following fields
 
-    - `Name` - The name for the Service
+    - `Name` - The name of the software
 
     - `Associable to a Ticket: Yes`
 
@@ -33,9 +33,9 @@ GLPI provides as part of it's library, software so it can be tracked and audited
         !!! info
             Within NFC select the `Site administrators` group as the Technician group in charge
 
-    - `Groups` - The user group that use the service
+    - `Groups` - The user group that use the software
 
-    - `Sub-Entities` Select `Yes` for prime Service
+    - `Sub-Entities` Select `Yes`
 
         !!! warning
             Not selecting `yes` for will prevent non-prime sites from associating the software to a ticket and using it as part of their machine inventory.
