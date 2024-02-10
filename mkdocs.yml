@@ -35,6 +35,8 @@ nav:
 
         - projects/itil/runbooks/glpi/software_add.md
 
+        - projects/itil/runbooks/glpi/ticket_triage.md
+
         - Plugins:
 
           - Form Creator:
