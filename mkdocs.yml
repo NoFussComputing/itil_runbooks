@@ -37,7 +37,9 @@ nav:
 
         - Plugins:
 
-          - projects/itil/runbooks/glpi/plugins/form_creator_new_form.md
+          - Form Creator:
+
+            - projects/itil/runbooks/glpi/plugins/form_creator_new_form.md
 
       - Kubernetes:
 
