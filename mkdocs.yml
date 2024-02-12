@@ -29,11 +29,17 @@ nav:
 
       - GLPI:
 
+        - projects/itil/runbooks/glpi/appliance_add.md
+
         - projects/itil/runbooks/glpi/computer_add.md
+
+        - projects/itil/runbooks/glpi/software_add.md
 
         - Plugins:
 
-          - projects/itil/runbooks/glpi/plugins/form_creator_new_form.md
+          - Form Creator:
+
+            - projects/itil/runbooks/glpi/plugins/form_creator_new_form.md
 
       - Kubernetes:
 
