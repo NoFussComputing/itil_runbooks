@@ -3,6 +3,7 @@
     "gitlab.duoChat.enabled": false,
     "cSpell.language": "en-AU,en",
     "cSpell.words": [
+        "actioned",
         "automations",
         "formcreator",
         "GLPI",
@@ -10,6 +11,7 @@
         "ITIL",
         "PHPIPAM",
         "runbook",
-        "runbooks"
+        "runbooks",
+        "triaging"
     ],
 }

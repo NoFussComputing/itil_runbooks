@@ -41,6 +41,8 @@ nav:
 
             - projects/itil/runbooks/glpi/plugins/form_creator_new_form.md
 
+        - projects/itil/runbooks/glpi/ticket_triage.md
+
       - Kubernetes:
 
           - projects/itil/runbooks/kubernetes/failed_to_connect_to_api.md
