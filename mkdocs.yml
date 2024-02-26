@@ -47,6 +47,10 @@ nav:
 
           - projects/itil/runbooks/kubernetes/failed_to_connect_to_api.md
 
+      - Linux:
+
+          - projects/itil/runbooks/linux/custom_ca.md
+
       - PHPIPAM:
 
           - projects/itil/runbooks/phpipam/device_add.md
