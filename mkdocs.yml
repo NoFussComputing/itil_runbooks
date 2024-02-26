@@ -55,6 +55,8 @@ nav:
 
           - projects/itil/runbooks/phpipam/device_add.md
 
+          - projects/itil/runbooks/phpipam/scanagent_add.md
+
       - Service Catalog:
 
           - projects/itil/runbooks/service_catalog/new_user.md
