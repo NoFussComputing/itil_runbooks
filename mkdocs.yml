@@ -23,6 +23,10 @@ nav:
 
       - projects/itil/runbooks/index.md
 
+      - AWX:
+
+        - projects/itil/runbooks/awx/install_remote_execution_node.md
+
       - GIT:
 
         - projects/itil/runbooks/git/project_config.md
