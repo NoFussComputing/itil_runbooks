@@ -25,6 +25,8 @@ nav:
 
       - AWX:
 
+        - projects/itil/runbooks/awx/add_execution_hop_node.md
+
         - projects/itil/runbooks/awx/install_remote_execution_node.md
 
       - GIT:
